@@ -6,10 +6,10 @@ type RouteLinkProps = {
 }
 
 const navlinks = [
-	{ text: 'pokemony', to: '/pokemons' },
-	{ text: 'ataki', to: '/attacks' },
-	{ text: 'przedmioty', to: '/items' },
-	{ text: 'moje konto', to: '/my-account' },
+	{ text: 'pokemons', to: '/pokemons' },
+	{ text: 'attacks', to: '/attacks' },
+	{ text: 'items', to: '/items' },
+	{ text: 'my account', to: '/my-account' },
 ]
 
 const RouteLink = (props: RouteLinkProps) => {
