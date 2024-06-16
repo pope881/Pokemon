@@ -19,7 +19,7 @@ const RouteLink = (props: RouteLinkProps) => {
 export const Navbar = () => {
 	return (
 		<>
-			<nav className="flex px-4 bg-red-500 text-white items-center justify-between lg:hidden fixed bottom-0 left-0 w-screen">
+			<nav className="flex px-4 bg-red-600 text-white items-center justify-between lg:hidden fixed bottom-0 left-0 w-screen ">
 				{navlinks.map(link => (
 					<RouteLink {...link} key={link.to} />
 				))}
