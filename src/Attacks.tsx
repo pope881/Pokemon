@@ -8,7 +8,7 @@ const attacks = [
 export const Attacks = () => {
 	return (
 		<>
-			<div className="flex justify-center items-center h-44 bg-red-600">
+			<div className="flex justify-center items-center h-44 ">
 				<ul>
 					{attacks.map(attack => (
 						<li key={attack.id}>{attack.name}</li>

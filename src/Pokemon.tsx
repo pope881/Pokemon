@@ -3,10 +3,10 @@ import { usePokemon } from './api/hooks/usePokemon'
 import { CircularProgress } from '@nextui-org/react'
 
 export const Pokemon = () => {
-	const { id, ...params } = useParams()
-	console.log(params)
+	const { id } = useParams()
+	// console.log(params)
 	const { data: pokemon, isFetching, isError } = usePokemon(id as string)
-
+	console.log(pokemon)
 	if (isFetching) {
 		return <CircularProgress />
 	}
@@ -14,11 +14,15 @@ export const Pokemon = () => {
 	if (!pokemon || isError) {
 		return <div>Error occured</div>
 	}
-
+	const str = pokemon.name
+	const modStr = str[0].toUpperCase() + str.slice(1)
 	return (
-		<div>
-			<span>{pokemon.name}</span>
-			<img src={pokemon.sprites.front_default} />
+		<div className="flex flex-col justify-center items-center  mt-10 ">
+			<p>{modStr}</p>
+			<img className="h-32" src={pokemon.sprites.front_default} />
+			<img className="h-32" src={pokemon.sprites.back_default} />
+			<img className="h-32" src={pokemon.sprites.front_shiny} />
+			<img className="h-32" src={pokemon.sprites.back_shiny} />
 		</div>
 	)
 }

@@ -15,6 +15,7 @@ export const usePokemons = (page: number) =>
 				.get(`/pokemon`, {
 					params: {
 						offset: page * 20,
+						// limit: 100,
 					},
 				})
 				.then(({ data }) => data),

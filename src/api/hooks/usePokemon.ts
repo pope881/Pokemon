@@ -4,7 +4,10 @@ import { pokeapi } from '../pokeapi'
 type Pokemon = {
 	name: string
 	sprites: {
+		back_default: string
 		front_default: string
+		back_shiny: string
+		front_shiny: string
 	}
 }
 

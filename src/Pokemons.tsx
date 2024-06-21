@@ -6,6 +6,11 @@ import { Link } from 'react-router-dom'
 export const Pokemons = () => {
 	const [page, setPage] = useState(0)
 	const { data: pokemons, isError, isFetching } = usePokemons(page)
+	console.log(pokemons)
+	// console.log(pokemons?.results)
+	// console.log(pokemons?.count)
+	// console.log(pokemons?.previous)
+	// console.log(pokemons?.results)
 
 	if (isError) {
 		return <p>Error loading pokemons</p>
@@ -14,13 +19,17 @@ export const Pokemons = () => {
 	if (pokemons) {
 		return (
 			<>
-				<div className="flex flex-col justify-center items-center bg-red-600">
-					<ul>
-						{pokemons.results.map(pokemon => (
-							<li key={pokemon.url}>
-								<Link to={`/pokemon/${pokemon.name}`}>{pokemon.name}</Link>
-							</li>
-						))}
+				<div className="flex flex-col justify-center items-center p-5">
+					<ul className="p-10">
+						{pokemons.results.map(pokemon => {
+							const str = pokemon.name
+							const modStr = str[0].toUpperCase() + str.slice(1)
+							return (
+								<li key={pokemon.url}>
+									<Link to={`/pokemon/${pokemon.name}`}>{modStr}</Link>
+								</li>
+							)
+						})}
 					</ul>
 					<Pagination
 						total={Math.ceil(pokemons.count / 20)}
