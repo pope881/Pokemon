@@ -4,9 +4,7 @@ import { CircularProgress } from '@nextui-org/react'
 
 export const Pokemon = () => {
 	const { id } = useParams()
-	// console.log(params)
 	const { data: pokemon, isFetching, isError } = usePokemon(id as string)
-	console.log(pokemon)
 	if (isFetching) {
 		return <CircularProgress />
 	}
@@ -23,6 +21,7 @@ export const Pokemon = () => {
 			<img className="h-32" src={pokemon.sprites.back_default} />
 			<img className="h-32" src={pokemon.sprites.front_shiny} />
 			<img className="h-32" src={pokemon.sprites.back_shiny} />
+			<div></div>
 		</div>
 	)
 }
