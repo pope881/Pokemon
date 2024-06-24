@@ -10,7 +10,8 @@ import {
 	Button,
 } from '@nextui-org/react'
 
-const menuItems = ['Home', 'Pokemons', 'Attacs', 'Items', 'My account', 'Log Out']
+const menuItems = ['Home', 'Pokemons', 'Attacks', 'Items', 'My account', 'Log Out']
+const menuItemsLinks = ['/', '/pokemons', '/attacks', '/items', '/my-account', 'Log Out']
 
 export const NavbarMenus = () => {
 	return (
@@ -72,7 +73,7 @@ export const NavbarMenus = () => {
 							<Link
 								className="w-full"
 								color={index === 2 ? 'warning' : index === menuItems.length - 1 ? 'danger' : 'foreground'}
-								to="/"
+								to={`${menuItemsLinks[index]}`}
 								size="lg">
 								{item}
 							</Link>
