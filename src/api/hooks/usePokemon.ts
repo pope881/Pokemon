@@ -1,6 +1,64 @@
 import { useQuery, keepPreviousData } from '@tanstack/react-query'
 import { pokeapi } from '../pokeapi'
 
+type NameUrl<T> = {
+	name: T
+	url: string
+}
+
+export enum StatName {
+	hp = 'hp',
+	attack = 'attack',
+	defense = 'defense',
+	specialAttack = 'special-attack',
+	specialDefense = 'special-defense',
+	speed = 'speed',
+}
+
+type Stat = {
+	base_stat: number
+	effor: number
+	stat: NameUrl<StatName>
+}
+
+export enum TypeName {
+	grass = 'grass',
+	poison = 'poison',
+	normal = 'normal',
+	fighting = 'fighting',
+	flying = 'flying',
+	ground = 'ground',
+	rock = 'rock',
+	bug = 'bug',
+	ghost = 'ghost',
+	steel = 'steel',
+	fire = 'fire',
+	water = 'water',
+	electric = 'electric',
+	psychic = 'psychic',
+	ice = 'ice',
+	dragon = 'dragon',
+	dark = 'dark',
+	fairy = 'fairy',
+	stellar = 'stellar',
+	unknown = 'unknown',
+	shadow = 'shadow',
+}
+
+type Type = {
+	slot: number
+	type: NameUrl<TypeName>
+}
+
+type Move = {
+	move: NameUrl<string>
+	version_group_details: Array<{
+		level_learned_at: number
+		move_learn_method: NameUrl<string>
+		version_group: NameUrl<string>
+	}>
+}
+
 type Pokemon = {
 	name: string
 	sprites: {
@@ -9,6 +67,10 @@ type Pokemon = {
 		back_shiny: string
 		front_shiny: string
 	}
+	stats: Array<Stat>
+	types: Array<Type>
+	order: number
+	moves: Array<Move>
 }
 
 export const usePokemon = (pokemonName: string) =>

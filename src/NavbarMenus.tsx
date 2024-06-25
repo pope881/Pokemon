@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import {
 	Navbar,
 	NavbarBrand,
@@ -8,6 +7,7 @@ import {
 	NavbarContent,
 	NavbarItem,
 	Button,
+	Link,
 } from '@nextui-org/react'
 
 const menuItems = ['Home', 'Pokemons', 'Attacks', 'Items', 'My account', 'Log Out']
@@ -29,28 +29,28 @@ export const NavbarMenus = () => {
 
 				<NavbarContent className="hidden sm:flex gap-4" justify="center">
 					<NavbarBrand>
-						<Link to="/" aria-current="page" color="warning">
+						<Link href="/" aria-current="page" color="warning">
 							<p className="font-bold text-inherit mr-10">PokeApi</p>
 						</Link>
 					</NavbarBrand>
 
 					<NavbarItem isActive>
-						<Link to="/pokemons" aria-current="page" color="warning">
+						<Link href="/pokemons" aria-current="page" color="warning">
 							Pokemons
 						</Link>
 					</NavbarItem>
 					<NavbarItem>
-						<Link color="foreground" to="/attacks">
+						<Link color="foreground" href="/attacks">
 							Attacs
 						</Link>
 					</NavbarItem>
 					<NavbarItem>
-						<Link color="foreground" to="/items">
+						<Link color="foreground" href="/items">
 							Items
 						</Link>
 					</NavbarItem>
 					<NavbarItem>
-						<Link color="foreground" to="/my-account">
+						<Link color="foreground" href="/my-account">
 							My account
 						</Link>
 					</NavbarItem>
@@ -58,10 +58,10 @@ export const NavbarMenus = () => {
 
 				<NavbarContent justify="end">
 					<NavbarItem className="hidden lg:flex">
-						<Link to="/">Login</Link>
+						<Link href="/">Login</Link>
 					</NavbarItem>
 					<NavbarItem>
-						<Button as={Link} color="warning" to="/" variant="flat">
+						<Button as={Link} color="warning" href="/" variant="flat">
 							Sign Up
 						</Button>
 					</NavbarItem>
@@ -70,11 +70,7 @@ export const NavbarMenus = () => {
 				<NavbarMenu>
 					{menuItems.map((item, index) => (
 						<NavbarMenuItem key={`${item}-${index}`}>
-							<Link
-								className="w-full"
-								color={index === 2 ? 'warning' : index === menuItems.length - 1 ? 'danger' : 'foreground'}
-								to={`${menuItemsLinks[index]}`}
-								size="lg">
+							<Link className="w-full" color="foreground" href={`${menuItemsLinks[index]}`} size="lg">
 								{item}
 							</Link>
 						</NavbarMenuItem>
