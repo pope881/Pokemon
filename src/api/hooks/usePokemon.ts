@@ -13,11 +13,13 @@ export enum StatName {
 	specialAttack = 'special-attack',
 	specialDefense = 'special-defense',
 	speed = 'speed',
+	accuracy = 'accuracy',
+	evasion = 'evasion',
 }
 
 type Stat = {
 	base_stat: number
-	effor: number
+	effort: number
 	stat: NameUrl<StatName>
 }
 

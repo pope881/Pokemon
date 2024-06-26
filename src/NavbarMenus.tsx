@@ -23,19 +23,19 @@ export const NavbarMenus = () => {
 
 				<NavbarContent className="sm:hidden pr-3" justify="center">
 					<NavbarBrand>
-						<p className="font-bold text-inherit">ACME</p>
+						<p className="font-bold text-inherit">PokeApi</p>
 					</NavbarBrand>
 				</NavbarContent>
 
 				<NavbarContent className="hidden sm:flex gap-4" justify="center">
 					<NavbarBrand>
-						<Link href="/" aria-current="page" color="warning">
+						<Link href="/" aria-current="page" color="foreground">
 							<p className="font-bold text-inherit mr-10">PokeApi</p>
 						</Link>
 					</NavbarBrand>
 
-					<NavbarItem isActive>
-						<Link href="/pokemons" aria-current="page" color="warning">
+					<NavbarItem>
+						<Link href="/pokemons" aria-current="page" color="foreground">
 							Pokemons
 						</Link>
 					</NavbarItem>
@@ -70,7 +70,7 @@ export const NavbarMenus = () => {
 				<NavbarMenu>
 					{menuItems.map((item, index) => (
 						<NavbarMenuItem key={`${item}-${index}`}>
-							<Link className="w-full" color="foreground" href={`${menuItemsLinks[index]}`} size="lg">
+							<Link className="w-full mt-5" color="secondary" href={`${menuItemsLinks[index]}`} size="lg">
 								{item}
 							</Link>
 						</NavbarMenuItem>
