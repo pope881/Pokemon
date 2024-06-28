@@ -7,6 +7,7 @@ export const Pokemons = () => {
 	const [page, setPage] = useState(0)
 	const { data: pokemons, isError, isFetching } = usePokemons(page)
 	console.log(pokemons)
+
 	// console.log(pokemons?.results)
 	// console.log(pokemons?.count)
 	// console.log(pokemons?.previous)

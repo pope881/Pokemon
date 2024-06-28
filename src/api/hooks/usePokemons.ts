@@ -1,6 +1,12 @@
 import { useQuery, keepPreviousData } from '@tanstack/react-query'
 import { pokeapi } from '../pokeapi'
-import { Page } from '../types'
+
+type Page<T> = {
+	count: number
+	next: null | string
+	previous: null | string
+	results: T
+}
 
 type BasicPokemon = {
 	name: string
