@@ -6,9 +6,13 @@ export const Pokemon = () => {
 	const { id } = useParams()
 	const { data: pokemon, isFetching, isError } = usePokemon(id as string)
 
-	console.log(pokemon)
+	// console.log(pokemon)
 	if (isFetching) {
-		return <CircularProgress />
+		return (
+			<div className="flex items-center justify-center">
+				<CircularProgress className="mt-60" color="success" label="Loading..." size="lg" />
+			</div>
+		)
 	}
 
 	if (!pokemon || isError) {
@@ -16,6 +20,8 @@ export const Pokemon = () => {
 	}
 	const { name, order, types, moves, stats, sprites } = pokemon
 	const biggestStat = Math.max(...stats.map(({ base_stat }) => base_stat))
+	console.log(biggestStat)
+	console.log(stats)
 	// Math.max(...[1,2,3,4,5,6,7])
 	// Math.max(1,2,3,4,5,6,7)
 	const capitalizedName = name[0].toUpperCase() + name.slice(1)

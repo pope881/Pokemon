@@ -40,7 +40,7 @@ export const Pokemons = () => {
 						onChange={newPage => setPage(newPage - 1)}
 						showControls
 					/>
-					{isFetching && <CircularProgress />}
+					{isFetching && <CircularProgress color="success" label="Loading..." size="lg" />}
 				</div>
 			</>
 		)

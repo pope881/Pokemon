@@ -6,6 +6,7 @@ import { Attacks } from './Attacks'
 import { Items } from './Items'
 import { MyAccount } from './MyAccount'
 import { Pokemon } from './Pokemon'
+import { Attack } from './Attack'
 
 export const router = createBrowserRouter([
 	{
@@ -16,6 +17,7 @@ export const router = createBrowserRouter([
 			{ path: '/pokemons', element: <Pokemons /> },
 			{ path: '/pokemon/:id', element: <Pokemon /> },
 			{ path: '/attacks', element: <Attacks /> },
+			{ path: '/attack/:move', element: <Attack /> },
 			{ path: '/items', element: <Items /> },
 			{ path: '/my-account', element: <MyAccount /> },
 		],
