@@ -21,6 +21,7 @@ export const Pokemons = () => {
 		return (
 			<>
 				<div className="flex flex-col justify-center items-center p-5">
+					<p className="text-3xl">List of pokemons:</p>
 					<div className="p-10 space-y-4">
 						{pokemons.results.map(pokemon => {
 							const name = pokemon.name

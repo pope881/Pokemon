@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { StatName, TypeName, usePokemon } from './api/hooks/usePokemon'
-import { CircularProgress, Link, Progress, baseStyles } from '@nextui-org/react'
+import { CircularProgress, Link, Progress } from '@nextui-org/react'
 
 export const Pokemon = () => {
 	const { id } = useParams()
@@ -132,10 +132,12 @@ export const Pokemon = () => {
 			<div className="flex gap-4 items-center w-full">
 				<img className="h-32" src={sprites.front_default} />
 				<div className="flex flex-col gap-2 w-full max-w-xs">
-					<h1>{capitalizedName}</h1>
-					<span>#{order}</span>
+					<div className="flex items-end gap-4">
+						<h1 className="text-4xl">{capitalizedName}</h1>
+						<span className="text-2xl">#{order}</span>
+					</div>
 					{stats.map(({ stat, base_stat }) => (
-						<div key={stat.url} className="flex items-center gap-2">
+						<div key={stat.url} className="flex items-center gap-2 ">
 							<span className="min-w-32 whitespace-nowrap text-right">{stat.name}</span>
 							<Progress value={(base_stat / biggestStat) * 100} classNames={{ indicator: getStatColor(stat.name) }} />
 						</div>
