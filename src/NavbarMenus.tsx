@@ -29,19 +29,24 @@ export const NavbarMenus = () => {
 
 				<NavbarContent className="hidden sm:flex gap-4" justify="center">
 					<NavbarBrand>
-						<Link href="/" aria-current="page" color="foreground">
-							<p className="font-bold text-inherit mr-10">PokeApi</p>
+						<Link
+							href="/"
+							aria-current="page"
+							color="foreground"
+							className="font-bold text-inherit mr-10"
+							underline="active">
+							PokeApi
 						</Link>
 					</NavbarBrand>
 
 					<NavbarItem>
-						<Link href="/pokemons" aria-current="page" color="foreground">
+						<Link href="/pokemons" aria-current="page" color="foreground" underline="active">
 							Pokemons
 						</Link>
 					</NavbarItem>
 					<NavbarItem>
 						<Link color="foreground" href="/attacks">
-							Attacs
+							Attacks
 						</Link>
 					</NavbarItem>
 					<NavbarItem>

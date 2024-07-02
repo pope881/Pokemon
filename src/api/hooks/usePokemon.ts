@@ -1,7 +1,7 @@
 import { useQuery, keepPreviousData } from '@tanstack/react-query'
 import { pokeapi } from '../pokeapi'
 
-type NameUrl<T> = {
+export type NameUrl<T> = {
 	name: T
 	url: string
 }
