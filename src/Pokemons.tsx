@@ -14,7 +14,7 @@ export const Pokemons = () => {
 	// console.log(pokemons?.results)
 
 	if (isError) {
-		return <p>Error loading pokemons</p>
+		return <p>Error loading pokemons.</p>
 	}
 
 	if (pokemons) {
@@ -41,7 +41,7 @@ export const Pokemons = () => {
 						onChange={newPage => setPage(newPage - 1)}
 						showControls
 					/>
-					{isFetching && <CircularProgress color="success" label="Loading..." size="lg" />}
+					{isFetching && <CircularProgress color="success" label="Loading page..." size="lg" />}
 				</div>
 			</>
 		)
