@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom'
-import { StatName, TypeName, usePokemon } from './api/hooks/usePokemon'
+import { StatName, usePokemon } from './api/hooks/usePokemon'
 import { CircularProgress, Link, Progress } from '@nextui-org/react'
 import { NatureTypes } from './NatureTypes'
 
@@ -17,7 +17,7 @@ export const Pokemon = () => {
 	}
 
 	if (!pokemon || isError) {
-		return <div>Error occured</div>
+		return <div>An error has been occured</div>
 	}
 	const { name, order, types, moves, stats, sprites } = pokemon
 	const biggestStat = Math.max(...stats.map(({ base_stat }) => base_stat))
