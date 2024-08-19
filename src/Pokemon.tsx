@@ -7,7 +7,7 @@ export const Pokemon = () => {
 	const { id } = useParams()
 	const { data: pokemon, isFetching, isError } = usePokemon(id as string)
 
-	// console.log(pokemon)
+	console.log(pokemon)
 	if (isFetching) {
 		return (
 			<div className="flex items-center justify-center">
@@ -21,8 +21,8 @@ export const Pokemon = () => {
 	}
 	const { name, order, types, moves, stats, sprites } = pokemon
 	const biggestStat = Math.max(...stats.map(({ base_stat }) => base_stat))
-	console.log(biggestStat)
-	console.log(stats)
+	// console.log(biggestStat)
+	// console.log(stats)
 	// Math.max(...[1,2,3,4,5,6,7])
 	// Math.max(1,2,3,4,5,6,7)
 	const capitalizedName = name[0].toUpperCase() + name.slice(1)
@@ -60,7 +60,7 @@ export const Pokemon = () => {
 	}
 
 	return (
-		<div className="flex flex-col justify-center px-6    ">
+		<div className="flex flex-col justify-center px-6">
 			<div className="flex gap-4 items-center w-full">
 				<img className="h-32" src={sprites.front_default} />
 				<div className="flex flex-col gap-2 w-full max-w-xs">
